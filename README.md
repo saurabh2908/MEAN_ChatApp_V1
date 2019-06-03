@@ -6,7 +6,7 @@ How To Use
 
 1. cd MEAN_ChatApp
 2. cd public
-3. npm install bower --save
+3. npm install bower -g
 4. bower install
 5. cd ..
 6. cd server
