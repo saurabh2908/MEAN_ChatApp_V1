@@ -32,7 +32,8 @@ app.controller('chatApp', function ($scope, socket) {
            },error=>{
                $scope.error = error;
            })
-           console.log(' Controller the end')
+           console.log(' Controller the end');
+         alert("Your Record is Added to DataBase Press Ok")
     }
   
     $scope.joinRoom = (data)=> {
@@ -48,7 +49,8 @@ app.controller('chatApp', function ($scope, socket) {
            },error=>{
                $scope.error = error;
            })
-           console.log(' Controller the end')
+           console.log(' Controller the end');
+         alert("Your Record is Added to DataBase Press Ok")
     }
     
   
