@@ -5,6 +5,7 @@ How To Use
 -->open terminal in any text editor(ATOM, VScode..) then type these commands
 
 1.npm install bower -g
+
 2. cd MEAN_ChatApp
 3. cd public
 
