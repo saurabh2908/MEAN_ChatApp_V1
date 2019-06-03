@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MEAN_ChatApp</title>
+    
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+   
+    
+   
+    
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/commonConst.js"></script>
+    <script src="./scripts/facotory.js"></script>
+    <script src="./scripts/controller.js"></script>
+</head>
+<body ng-app='chat'>
+        <div ng-controller='chatApp'>
+                <h2 class="text-center ">MADE BY SAURABH SINGH</h2>
+                <hr>
+                <div>
+                <h3>How To Use</h3>
+            <p>--> This is person to person chat app</p><br>
+            <p>--> First you create an room in create box</p><br>
+            <p>--> Second share the id to your friend which is generated  </p><br>
+            </div><hr>
+                            <div ng-repeat="person in users">
+                                <div ng-if="person">
+                                        <div  ng-class=" (user.username == curtrentUser)">
+                                            <div class=" ng-binding "> 
+                                                <strong>{{person.username}}
+                                                </strong>
+                                                {{person.message}} <br>
+                                                <span class=" ng-binding ">{{person.date | date: 'h:mma'}}</span>
+                                            </div>
+                                            </div>
+                                    </div>
+                                </div>  <hr>
+                        <h2 >Type To Send Message</h2><hr>
+                        
+                        <input  id="data " type="text " ng-model="message " placeholder="Type your message here "  >
+                                <button id="send " type="button " ng-click="post(message) ">Send</button><hr>
+                       
+                        
+                        <div class="form-group up">
+                                <h4>Join</h4>
+                            <label >Your Name</label>
+                            <input type="text " ng-model="join.username" id="room0 " placeholder="Enter Name " />
+                        </div>
+                    
+                        <div class="form-group ">
+                            <label>Room Id</label>
+                            <input type="text " ng-model="join.room"  id="room1 " placeholder="Enter Room Code " />
+                        </div>
+                        <button type="submit " ng-click="joinRoom(join) ">Submit</button>
+                        <hr>
+                        <h4>Create</h4>
+                        
+                            <label>Your Name</label>
+                            <input type="text " ng-model="create.username " id="create " placeholder="Enter Name " />
+                        
+                        <button type="submit "  ng-click="createRoom(create) ">Submit</button>
+                        
+                    
+                
+    </div>    
+</body>
+</html>
